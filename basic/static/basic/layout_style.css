@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: 6;
+    background-color: #009879;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: larger;
+    color: white;
+}
+
+.header ul {
+    margin: 0;
+    padding: 5px 10px;
+}
+
+.header ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header ul li a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template: 80px 1fr 1fr 50px / repeat(5, 1fr);
+    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.container div {
+    padding: 10px;
+    border: 1px solid #000000;
+    overflow: auto;
+}
+
+.content-large {
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column-start: 2;
+    grid-column-end: span 2;
+}
+
+.content-right {
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column-start: 4;
+    grid-column-end: span 2;
+}
+
+.vertical-menu {
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    grid-column-start: 1;
+    grid-column-end: span 1;
+    width: 200px;
+}
+
+.vertical-menu a {
+    background-color: #009879;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    margin: 5px;
+}
+
+.footer {
+    grid-column: 1 / span 5;
+    background-color: #009879;
+    text-align: center;
+    color: white;
+}
+
+.table-content {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin: 10px 10px 10px 10px;
+}
+
+.table-content thead tr {
+    background-color: #009879;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table-content th,
+.table-content td {
+    padding: 12px 15px;
+}
+
+.table-content td.state {
+    min-width: 280px;
+}
+
+.table-content tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table-content tbody tr:hover {
+    color: #009879;
+    font-weight: bold;
+}
+
+.table-content tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table-content tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}

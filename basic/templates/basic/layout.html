@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <link rel="stylesheet" href="{% static 'basic/layout_style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="vertical-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+        </div>
+
+        <div class="content-large">
+            <table class="table-content">
+                <thead>
+                    <tr class="table1-head">
+                        <th class="column1">Sr. No.</th>
+                        <th class="column2">State</th>
+                        <th class="column3">Districts</th>
+                        <th class="column4">Population</th>
+                        <th class="column4">Poverty Rate</th>
+                        <th class="column4">BPL Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in table %}
+                    <tr onclick="show_data()">
+                        <td class="column1" align="right">{{row.ID}}</td>
+                        <td class="state" align="left">{{row.State}}</td>
+                        <td class="column3" align="right">{{row.Districts}}</td>
+                        <td class="column4" align="right">{{row.Population}}</td>
+                        <td class="column4" align="right">{{row.pov_rate}}</td>
+                        <td class="column4" align="right">{{row.pov_pop}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="content-right">
+            <table class="table-content">
+                <thead>
+                    <tr class="table1-head">
+                        <th class="column1">Sr. No.</th>
+                        <th class="column3">Districts</th>
+                        <th class="column4">Area</th>
+                        <th class="column4">Population</th>
+                        <th class="column4">Density</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in state_data %}
+                    <tr id="district-row">
+                        <td class="column1" align="right">{{row.ID}}</td>
+                        <td class="state" align="left">{{row.District}}</td>
+                        <td class="column4" align="right">{{row.Area}}</td>
+                        <td class="column4" align="right">{{row.Population}}</td>
+                        <td class="column4" align="right">{{row.Density}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            All rights reserved &copy; 2020
+        </div>
+    </div>
+</body>
+
+</html>
